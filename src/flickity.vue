@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import Flickity from 'flickity';
-
 export default {
   props: {
     options: Object,
@@ -26,6 +24,7 @@ export default {
      * Initialize a new flickity and emit init event.
      */
     init() {
+      const Flickity = require('flickity');
       this.$flickity = new Flickity(this.$el, this.options);
       this.$emit('init', this.$flickity);
     },
@@ -217,6 +216,7 @@ export default {
      * @return {Flickity}
      */
     data() {
+      const Flickity = require('flickity');
       return Flickity.data(this.$el);
     },
 
